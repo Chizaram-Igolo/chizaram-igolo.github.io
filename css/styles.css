@@ -38325,3 +38325,7 @@ body.nav-on {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.ufo--page-hero a.dark-colored-link {
+  color: #3d3d3d !important;
+}
