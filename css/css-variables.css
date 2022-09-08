@@ -1,0 +1,259 @@
+.profile-page.profile_theme_eight .ufo--page-hero-content,
+.profile-page .project .project-name .project-title,
+.profile-page .project .project-name .project-subtitle,
+.ufo--about-page {
+  --h1Font: "Muli";
+  --h1Color: #4c4c4d;
+  --h1Weight: bold;
+  --h1Style: normal;
+
+  --h1Size: 16px;
+  --h1Height: 21px;
+  --h2Font: "Libre Baskerville";
+  --h2Color: #002d72;
+  --h2Weight: normal;
+  --h2Style: normal;
+
+  --h2Size: 25px;
+  --h2Height: 39px;
+  --p1Font: "Muli";
+  --p1Color: #2f2f2f;
+  --p1Weight: normal;
+  --p1Style: normal;
+
+  --p1Size: 16px;
+  --p1Height: 21px;
+  --projectTitleFont: "Libre Baskerville";
+  --projectTitleColor: #2f2f2f !important;
+  --projectTitleWeight: bold;
+  --projectTitleStyle: normal;
+
+  --projectSubTitleFont: "Muli";
+  --projectSubTitleColor: #2f2f2f !important;
+  --projectSubTitleWeight: normal;
+  --projectSubTitleStyle: normal;
+
+  --buttonFont: "Libre Baskerville";
+  --buttonColor: #002d72;
+  --buttonWeight: normal;
+  --buttonStyle: normal;
+  --borderColor: #002d7233;
+
+  --buttonSize: 16px;
+  --buttonHeight: 21px;
+
+  --projectTitleSize: 20px;
+  --projectTitleHeight: 23px;
+  --projectSubTitleSize: 16px;
+  --projectSubTitleHeight: 19px;
+}
+
+.profile-footer,
+.profile-footer.profile_theme_eight {
+  --textColor: #2f2f2f99;
+  --borderColor: #2f2f2f33;
+}
+
+.ufo--site-nav-container .profile-button:after,
+.profile-footer,
+.profile-footer.profile_theme_eight {
+  --buttonColor: #002d72;
+  --buttonSize: 16px;
+}
+
+@media (min-width: 768px) {
+  .profile-page.profile_theme_eight .ufo--page-hero-content,
+  .profile-page .project .project-name .project-title,
+  .profile-page .project .project-name .project-subtitle,
+  .ufo--about-page {
+    --h1Size: 20px;
+    --h1Height: 30px;
+    --h2Size: 36px;
+    --h2Height: 56px;
+    --p1Size: 16px;
+    --p1Height: 22px;
+    --projectTitleSize: 24px;
+    --projectTitleHeight: 37px;
+    --projectSubTitleSize: 16px;
+    --projectSubTitleHeight: 22px;
+    --buttonSize: 16px;
+    --buttonHeight: 19px;
+  }
+}
+
+.profile_theme_eight .ufo--page-hero .profile-name {
+  --buttonColor: #002d72;
+}
+
+@media (min-width: 1025px) {
+  .project .project-name .project-title {
+    color: var(--projectTitleColor);
+  }
+}
+
+@media (min-width: 1025px) {
+  .project .project-name .project-subtitle {
+    color: var(--projectSubTitleColor);
+  }
+}
+
+.profile_theme_eight.ufo--page-hero,
+.ufo--user-projects-list,
+.ufo--page-hero .profile-about,
+.ufo--about-page,
+.profile_theme_eight .profile-view-nav {
+  --hoverColor: #fdcb9c;
+}
+
+body,
+.profile-page,
+.profile-footer,
+.profile-page.profile_theme_eight,
+.profile-footer.profile_theme_eight {
+  --bgColor: #fffdf9;
+}
+
+.profile_theme_eight,
+.profile_theme_eight .ufo--page-hero-content .ufo--site-nav-container {
+  --bgColor: #fffdf9;
+}
+
+.profile_theme_eight .ufo--page-hero-content .ufo--site-nav-social a:hover,
+.profile_theme_eight .ufo--page-hero-content .profile-button .btn:hover,
+.profile_theme_eight .ufo--page-hero-content .profile-button:after {
+  --hoverColor: #fdcb9c;
+  background: transparent;
+}
+
+.profile-footer.profile_theme_eight,
+.profile_theme_eight .ufo--page-hero .profile-name {
+  --hoverColor: #fdcb9c;
+}
+
+@media (min-width: 768px) {
+  .profile_theme_three .ufo--page-hero-content .ufo--site-nav-container {
+    background-color: transparent;
+  }
+}
+
+@media (min-width: 640px) {
+  .profile_theme_four .ufo--page-hero-content .ufo--site-nav-container {
+    background-color: transparent;
+  }
+}
+
+.profile_theme_five .ufo--page-hero:before {
+  --bgColor: #fffdf9;
+}
+
+.ufo--cta-btn-wr .btn--cta {
+  --ctaBgColor: #a4cfee;
+  --ctaButtonSize: 16px;
+  --ctaButtonFont: Mulish;
+  --ctaButtonColor: #ffffff;
+  --ctaButtonHeight: 19px;
+  --ctaButtonWeight: bold;
+  --ctaButtonStyle: normal;
+}
+
+/* ------ */
+
+.ufo-sec,
+.ufo--about-header .about-title .title,
+.profile-page .project .project-name .project-title,
+.profile-page .project .project-name .project-subtitle {
+  --h1Font: "Muli";
+  --h1Color: #424242;
+  --h1Weight: bold;
+  --h1Style: normal;
+
+  --h1Size: 24px;
+  --h1Height: 28px;
+  --h2Font: "Libre Baskerville";
+  --h2Color: #424242;
+  --h2Weight: bold;
+  --h2Style: normal;
+
+  --h2Size: 24px;
+  --h2Height: 26px;
+  --h3Font: "Mulish";
+  --h3Color: #4c4c4d;
+  --h3Weight: bold;
+  --h3Style: normal;
+
+  --h3Size: 17px;
+  --h3Height: 22px;
+  --h4Font: "Libre Baskerville";
+  --h4Color: #4c4c4d;
+  --h4Weight: normal;
+  --h4Style: normal;
+
+  --h4Size: 17px;
+  --h4Height: 25px;
+  --p1Font: "Mulish";
+  --p1Color: #4c4c4d;
+  --p1Weight: normal;
+  --p1Style: normal;
+
+  --p1Size: 16px;
+  --p1Height: 1.5;
+  --p2Font: "Muli";
+  --p2Color: #586165;
+  --p2Weight: normal;
+  --p2Style: italic;
+
+  --p2Size: 16px;
+  --p2Height: 1.5;
+  --ctaButtonFont: "Mulish";
+  --ctaButtonColor: #fdcb9c;
+  --ctaButtonWeight: bold;
+  --ctaButtonStyle: normal;
+
+  --ctaButtonSize: 12px;
+  --ctaButtonHeight: 21px;
+  --accentColor: #fdcb9c;
+  --hoverColor: #fdcb9c;
+}
+
+@media (min-width: 576px) {
+  .ufo--about-header .about-title .title,
+  .profile-page .project .project-name .project-title,
+  .profile-page .project .project-name .project-subtitle {
+    --h3Size: 25px;
+    --h3Height: 28px;
+    --p1Size: 18px;
+    --p1Height: 21px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ufo-sec,
+  .ufo--about-header .about-title .title,
+  .profile-page .project .project-name .project-title,
+  .profile-page .project .project-name .project-subtitle {
+    --h1Size: 60px;
+    --h1Height: 69px;
+    --h2Size: 34px;
+    --h2Height: 37px;
+    --h3Size: 24px;
+    --h3Height: 31px;
+    --h4Size: 24px;
+    --h4Height: 36px;
+    --p1Size: 16px;
+    --p1Height: 27px;
+    --p2Size: 16px;
+    --p2Height: 21px;
+    --ctaButtonSize: 12px;
+    --ctaButtonHeight: 21px;
+  }
+}
+
+.ufo--cta-btn-wr .btn--cta {
+  --ctaBgColor: #a4cfee;
+  --ctaButtonSize: 16px;
+  --ctaButtonFont: Mulish;
+  --ctaButtonColor: #ffffff;
+  --ctaButtonHeight: 19px;
+  --ctaButtonWeight: bold;
+  --ctaButtonStyle: normal;
+}

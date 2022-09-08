@@ -1,0 +1,615 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="../assets/imgs/favicon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../assets/imgs/favicon-180x180.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../assets/imgs/favicon.png">
+
+    <link rel="stylesheet" href="../css/case-study-view.css">
+    <title>Improving Search</title>
+    <meta name="description"
+        content="Adding elastic search to easily find what you’re looking for in thousands of projects and cases." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Your Case Study Title" />
+    <meta property="og:description"
+        content="This is your case study subtitle, rewrite these text-boxes &amp; make them yours." />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://jaclynchao.com/p/jaclynchao/elastic-search" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Case Study Title">
+    <meta name="twitter:description"
+        content="This is your case study subtitle, rewrite these text-boxes &amp; make them yours.">
+    <meta name="twitter:image" content="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;800;900&family=Source+Serif+Pro:wght@400;700;800;900&family=Mulish:wght@400;700;800;900&family=PT+Serif:wght@400;700;800;900&family=Libre+Baskerville:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        :root {
+            --title-font: "Source Sans Pro", sans-serif;
+            --body-font: 'PT Serif', serif;
+        }
+
+
+        .ufo--case-study-container {
+            --h1Font: "Source Sans Pro";
+            --h1Color: #353738;
+            --h1Weight: bold;
+            --h1Style: normal;
+
+
+            --h1Size: 42px;
+            --h1Height: 50px;
+
+            --h2Font: "Source Sans Pro";
+            --h2Color: #353738;
+            --h2Weight: normal;
+            --h2Style: italic;
+
+
+            --h2Size: 28px;
+            --h2Height: 30px;
+
+            --h3Font: "Source Serif Pro";
+            --h3Color: #353738;
+            --h3Weight: bold;
+            --h3Style: normal;
+
+
+            --h3Size: 25px;
+            --h3Height: 27px;
+
+            --h4Font: "Source Serif Pro";
+            --h4Color: #353738;
+            --h4Weight: bold;
+            --h4Style: normal;
+
+
+            --h4Size: 17px;
+            --h4Height: 20px;
+
+            --p1Font: "Mulish";
+            --p1Color: #353738;
+            --p1Weight: normal;
+            --p1Style: normal;
+
+
+            --p1Size: 16px;
+            --p1Height: 21px;
+
+            --p2Font: "PT Serif";
+            --p2Color: #7b7e80;
+            --p2Weight: normal;
+            --p2Style: normal;
+
+
+            --p2Size: 16px;
+            --p2Height: 16px;
+
+            --projectTitleFont: "Source Serif Pro";
+            --projectTitleColor: #FFFFFF;
+            --projectTitleWeight: bold;
+            --projectTitleStyle: normal;
+
+
+            --projectTitleSize: 38px;
+            --projectTitleHeight: 42px;
+
+            --projectSubTitleFont: "Mulish";
+            --projectSubTitleColor: #FFFFFF;
+            --projectSubTitleWeight: normal;
+            --projectSubTitleStyle: normal;
+
+
+            --projectSubTitleSize: 16px;
+            --projectSubTitleHeight: 16px;
+
+            --buttonFont: "Libre Baskerville";
+            --buttonColor: #FFFFFF;
+            --buttonWeight: normal;
+            --buttonStyle: normal;
+            --borderColor: #FFFFFF33;
+
+            --buttonSize: 16px;
+            --buttonHeight: 16px;
+
+        }
+
+        @media (min-width: 576px) {
+            .ufo--case-study-container {
+                --h3Size: 25px;
+                --h3Height: 28px;
+                --p1Size: 18px;
+                --p1Height: 21px;
+                --projectTitleSize: 48px;
+                --projectSubTitleSize: 22px;
+                --projectTitleHeight: 51px;
+                --projectSubTitleHeight: 25px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .ufo--case-study-container {
+                --h1Size: 60px;
+                --h1Height: 72px;
+                --h2Size: 40px;
+                --h2Height: 43px;
+                --h3Size: 36px;
+                --h3Height: 39px;
+                --h4Size: 24px;
+                --h4Height: 29px;
+                --p1Size: 18px;
+                --p1Height: 30px;
+                --p2Size: 16px;
+                --p2Height: 19px;
+                --projectTitleSize: 54px;
+                --projectTitleHeight: 60px;
+                --projectSubTitleSize: 20px;
+                --projectSubTitleHeight: 23px;
+                --buttonSize: 16px;
+                --buttonHeight: 19px;
+            }
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+
+            .ufo--site-nav-container,
+            .ufo--page-navbar-container,
+            .ufo--page-navbar-toggle.on,
+            .ufo--site-nav-toggle-btn.on {
+                --h1Font: "Muli";
+                --h1Color: #4C4C4D;
+                --h1Weight: bold;
+                --h1Style: normal;
+
+
+                --h1Size: 16px;
+                --h1Height: 21px;
+
+                --h2Font: "Libre Baskerville";
+                --h2Color: #002D72;
+                --h2Weight: normal;
+                --h2Style: normal;
+
+
+                --h2Size: 25px;
+                --h2Height: 39px;
+
+                --p1Font: "Muli";
+                --p1Color: #2F2F2F;
+                --p1Weight: normal;
+                --p1Style: normal;
+
+
+                --p1Size: 16px;
+                --p1Height: 16px;
+
+                --projectTitleFont: "Libre Baskerville";
+                --projectTitleColor: #2F2F2F;
+                --projectTitleWeight: bold;
+                --projectTitleStyle: normal;
+
+
+                --projectTitleSize: 17px;
+                --projectTitleHeight: 26px;
+
+                --projectSubTitleFont: "Muli";
+                --projectSubTitleColor: #2F2F2F;
+                --projectSubTitleWeight: normal;
+                --projectSubTitleStyle: normal;
+
+
+                --projectSubTitleSize: 16px;
+                --projectSubTitleHeight: 16px;
+
+                --buttonFont: "Libre Baskerville";
+                --buttonColor: #002D72;
+                --buttonWeight: normal;
+                --buttonStyle: normal;
+                --borderColor: #002D7233;
+
+                --buttonSize: 16px;
+                --buttonHeight: 16px;
+
+                --bgColor: #FFFDF9;
+            }
+
+            .ufo--site-nav .ufo--site-nav-button .btn,
+            .ufo--site-nav .ufo--site-nav-social a {
+                --hoverColor: #FDCB9C !important;
+                --bgColor: transparent !important;
+            }
+        }
+
+
+
+        .ufo-sec--header-main .ufo--site-owner .info,
+        .ufo-sec--header-main .ufo--branding {
+            --buttonColor: #FFFFFF;
+        }
+
+        .theme_seven.ufo--site-nav.nav-is-on .ufo--page-navbar .line {
+            --borderColor: #FFFFFF;
+        }
+
+        .ufo-sec--header-main .ufo--hero-content-grid.has-image .text-container {
+            text-align: center;
+        }
+
+        .ufo-sec--header-main .text-container {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {}
+
+        @media (min-width: 992px) {
+            .ufo-sec--header-main .ufo--hero-content-grid.has-image .text-container {
+                text-align: left;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .ufo-sec--header-main .grid {
+                --rowSize: 400px;
+            }
+        }
+
+
+
+        .ufo--cta-btn-wr .btn--cta {
+            --ctaBgColor: #A4CFEE;
+            --ctaButtonSize: 16px;
+            --ctaButtonFont: Mulish;
+            --ctaButtonColor: #FFFFFF;
+            --ctaButtonHeight: 19px;
+            --ctaButtonWeight: bold;
+            --ctaButtonStyle: normal;
+
+        }
+    </style>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N24X7V9" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <main>
+        <div class="ufo--case-study-container project">
+
+
+            <div id="section-0" class="ufo-sec ufo-sec--header-main gradient " style=" background-color: #A4CFEE; ">
+
+                <div class="grid ufo--hero-content-grid ">
+
+
+
+                    <div class="ufo--site-nav profile_theme_eight ">
+                        <div class="ufo--site-owner" onclick="navigateBack()">
+                            <div class="picture">
+                                <img height="50" src="../assets/imgs/profile-pic.jpg" />
+                            </div>
+                            <div class="info ">
+                                <div class="name">chizaram igolo</div>
+                                <div class="company">Full-Stack Developer</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="text-container    v-bottom ">
+                        <h1>Improving Search</h1>
+                        <h2>Adding elastic search to easily find what you’re looking for in thousands of projects and
+                            cases.</h2>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div id="section-1" class="ufo-sec ufo-sec--media image " style="--paddingTop: 0px;  --paddingBottom: 0px;">
+
+                <div class="grid">
+                    <div class="media-container display-mode--default  " style="padding-top: 0;  padding-bottom: 0;">
+                        <div class="media-box  ">
+
+                            <div class="image">
+                                <img loading="lazy"
+                                    src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/6168d44e2adc3e0003028c74/dC6e9eZ7xmQYximh.png"
+                                    data-zoom alt="Improving Search" width="1300" height="700">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="section-2" class="ufo-sec ufo-sec--columns" style="--paddingTop: 100px;  --paddingBottom: 50px;">
+                <div class="grid ufo--columns ufo--columns-3">
+                    <div class="ufo--column">
+                        <h4>My role</h4>
+                        <p>Solo designer through end-to-end process: discovery, design, usability, testing, prototyping,
+                            support through development</p>
+                    </div>
+                    <div class="ufo--column">
+                        <h4>Team</h4>
+                        <p>1 UX Manager<br>2 Product Manager<br>2 Architect<br>5 Full-stack Developers</p>
+                    </div>
+                    <div class="ufo--column">
+                        <h4>Platform</h4>
+                        <p>Desktop</p>
+                    </div>
+                </div>
+            </div>
+            <div id="section-3" class="ufo-sec ufo-sec--text" style="--paddingTop: 100px; --paddingBottom: 50px;">
+                <div class="grid">
+                    <div class="text-container "">
+            <h3>At long last,</h3><p>we're upgrading to elastic search! Updating the search bar has been highly requested by users for YEARS and somehow kept getting pushed because other areas had more importance. With that said, I'm glad we can finally upgrade the old, outdated, unfriendly, and elastic-less search function that customers don't use because it doesn't work well (+ somewhat useless now tbh).</p>
+    </div>
+
+
+
+            </div>
+        </div>
+    <div id=" section-4" class="ufo-sec ufo-sec--media image " style="--paddingTop: 0px;  --paddingBottom: 0px;">
+
+                        <div class="grid">
+                            <div class="media-container display-mode--default  "
+                                style="padding-top: 0;  padding-bottom: 0;">
+                                <div class="media-box  ">
+
+                                    <div class="image">
+                                        <img loading="lazy"
+                                            src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/6168d44e2adc3e0003028c74/URAvLsLtTrTJp0rC.png"
+                                            data-zoom alt="Improving Search" width="2083" height="1042">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="section-30" class="ufo-sec ufo-sec--text"
+                        style="--paddingTop: 100px; --paddingBottom: 100px;">
+                        <div class="grid">
+                            <div class="text-container "">
+            <h3>Challenges along the way</h3><p>Since our UX design team was established within the last few years, our overall process is still being tweaked and improved for each of our products. That being said, user testing is slowly being implemented and understood by higher ups that it's necessary since we've received some negative feedback of issues and bugs on our previous releases. However, it's nice to see an older company, accepting that UX is more than just design and will improve the product in newer ways.</p>
+    </div>
+
+
+
+            </div>
+        </div>
+
+
+
+            <div id=" section-33" class="ufo-sec ufo-sec--textandmedia flipped-false "
+                                style="--paddingTop: 50px;  --paddingBottom: 0px;">
+
+                                <div class="grid">
+
+                                    <div class="col-media  media-image media-default   "
+                                        style="padding-top: 0;  padding-bottom: 0;">
+                                        <div class="media-container">
+                                            <div class="media-box">
+                                                <div class="media-box  ">
+
+                                                    <div class="image">
+                                                        <img loading="lazy"
+                                                            src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/6168d44e2adc3e0003028c74/CoBrhkaunkvVp31G.gif"
+                                                            data-zoom alt="Improving Search" width="640" height="640">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-text  media-image media-default ">
+                                        <div class="text-container ">
+                                            <h3>nth time's the charm!</h3>
+                                            <p>Based on feedback from our testing, we
+                                                didn't have any huge problem areas but
+                                                rather a few minor issues in the
+                                                interface. After a few more tweaks and
+                                                iterations, I established the final
+                                                designs and it was ready for
+                                                development!</p>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id=" section-46" class="ufo-sec ufo-sec--text"
+                                style="--paddingTop: 70px; --paddingBottom: 130px;">
+                                <div class="grid">
+                                    <div class="text-container "">
+            <h3>Elastic search launch date?</h3><p>We outsource our developers, so a few issues during QA testing arose after the release completion date. These few bugs will be fixed in the next couple of weeks prior to launching Elastic Search. Hopefully we get some great user feedback!</p><p>I definitely learned a lot from this project like working with architects and a whole development team instead of just 1 or 2 people. Also, solving the issues that arose throughout the project whether I was working around it or finding better solutions based on what it was. It was all fun, especially since this was my first major project as a full-time UX/UI designer!</p>
+    </div>
+
+
+
+            </div>
+        </div>
+    	</div>
+
+		<div class=" scroll-to-top "</div>
+
+	</main>
+
+		<footer class=" project-footer">
+                                        <div class="footer-info">
+                                            <div class="grid info projects-list">
+                                                <div class="project-owner">
+                                                    <div class="owner" onclick="navigateBack()">
+                                                        <div class="owner-picture">
+                                                            <img loading="lazy" height="60"
+                                                                src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/jaclyn_Ksa.jpg"
+                                                                alt="User image" />
+                                                        </div>
+                                                        <div class="owner-info">
+                                                            <div class="owner-name">
+                                                                jaclyn
+                                                                chao
+                                                            </div>
+                                                            <div class="owner-company">
+                                                                Product
+                                                                Designer
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="footer-links">
+                                                    </div>
+                                                </div>
+                                                <div class="project-owner-projects ">
+                                                    <div class="title-line">
+                                                        See
+                                                        more
+                                                        of
+                                                        my
+                                                        work:
+                                                    </div>
+                                                    <div class="owner-projects-content">
+                                                        <div onclick='navigateToProjectFooter("manage-billing-subscriptions")'
+                                                            class="f-project">
+                                                            <div class="image">
+                                                                <img loading="lazy" width="70"
+                                                                    src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/6115b76b254cf60003611bd5/rFr5ySGpCZByz3J3.png"
+                                                                    alt="Manage Billing & Subscriptions">
+                                                            </div>
+                                                            <div class="title">
+                                                                <h4>Manage
+                                                                    Billing
+                                                                    &
+                                                                    Subscriptions
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div onclick='navigateToProjectFooter("socializing-at-home")'
+                                                            class="f-project">
+                                                            <div class="image">
+                                                                <img loading="lazy" width="70"
+                                                                    src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/5ff8f55b0d5ee90003ec730b/m0Gq6V2MytcBhC5A.png"
+                                                                    alt="Socializing at Home">
+                                                            </div>
+                                                            <div class="title">
+                                                                <h4>Socializing
+                                                                    at
+                                                                    Home
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div onclick='navigateToProjectFooter("mentoring-platform")'
+                                                            class="f-project">
+                                                            <div class="image">
+                                                                <img loading="lazy" width="70"
+                                                                    src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/5f63e934924c240004e4d620/w1hL2JVhy1wMHKN2.png"
+                                                                    alt="Mentoring Platform">
+                                                            </div>
+                                                            <div class="title">
+                                                                <h4>Mentoring
+                                                                    Platform
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div onclick='navigateToProjectFooter("art-for-fun")'
+                                                            class="f-project">
+                                                            <div class="image">
+                                                                <img loading="lazy" width="70"
+                                                                    src="https://storage.googleapis.com/uxfolio/5e4dde6b571bd60004342925/5f63d60f924c240004e4d60d/XeGllE8PxCd3ggNt.png"
+                                                                    alt="Art for fun">
+                                                            </div>
+                                                            <div class="title">
+                                                                <h4>Art
+                                                                    for
+                                                                    fun
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </footer>
+
+
+                                        <script src="/dist/csv-f06f87e1b0214ff5ecedeefd6b337384.js"></script>
+                                        <script>
+                                            function navigateBack() {
+                                                window.location.href = window.location.protocol + "//jaclynchao.com";
+                                            }
+
+                                            function navigateToProjectFooter(projectShortId) {
+                                                window.location.href = "/p/jaclynchao" + "/" + projectShortId;
+                                            }
+
+                                            function navigateToProject(projectUrl) {
+                                                window.location.href = location.origin + projectUrl;
+                                            }
+
+                                            function navigateToPage(page) {
+                                                if (!!page) {
+                                                    window.location.href = window.location.protocol + "//jaclynchao.com" + "/" + page;
+                                                } else {
+                                                    window.location.href = window.location.protocol + "//jaclynchao.com"
+                                                }
+                                            }
+
+                                            function ctaIntNavigation(page) {
+                                                if (!!page) {
+                                                    window.location.href = window.location.protocol + "//jaclynchao.com" + "/" + page;
+                                                } else {
+                                                    window.location.href = window.location.protocol + "//jaclynchao.com"
+                                                }
+                                            }
+                                        </script>
+
+                                        <script>
+                                            const sidebarToggler = document.querySelector('.ufo--site-nav-sidebar-toggle');
+                                            const nav = document.querySelector('.ufo--site-nav-container')
+                                            if (!!sidebarToggler) {
+                                                sidebarToggler.onclick = function () {
+                                                    nav.classList.toggle('visible');
+                                                }
+                                            }
+                                            const sidebarClose = document.querySelector('.ufo-site-nav-sidebar-close');
+                                            if (!!sidebarClose) {
+                                                sidebarClose.onclick = function () {
+                                                    nav.classList.toggle('visible');
+                                                }
+                                            }
+                                            const menuToggler = document.querySelector('.ufo--site-nav-toggle-btn');
+                                            if (!!menuToggler) {
+                                                menuToggler.onclick = function () {
+                                                    this.classList.toggle('on');
+                                                    document.querySelector('.ufo--site-nav-container').classList.toggle('visible');
+                                                    document.querySelector('body').classList.toggle('nav-on');
+                                                }
+                                            }
+                                        </script>
+
+</body>
+
+</html>
